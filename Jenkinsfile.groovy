@@ -17,10 +17,5 @@ pipeline {
                 sh 'docker run hello-world'
             }
         }
-        stage("Echo") {
-            steps {
-                sh 'echo step'
-            }
-        }
     }
 }
