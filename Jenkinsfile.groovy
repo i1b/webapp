@@ -9,14 +9,14 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("Step 1") {
+        stage("Docker") {
             steps {
-                sh 'echo step 1'
+                sh 'docker run hello-world'
             }
         }
-        stage("Step 2") {
+        stage("Echo") {
             steps {
-                sh 'echo step 2'
+                sh 'echo step'
             }
         }
     }
