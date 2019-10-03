@@ -14,14 +14,19 @@ pipeline {
                 sh 'mvn clean test'
             }
         }
-        stage("Project build") {
+        stage("Build project") {
             steps {
                 sh 'mvn clean install'
             }
         }
-        stage("Image build ") {
+        stage("Build image") {
             steps {
-                sh 'docker build .'
+                sh 'docker build -t webapp:dev .'
+            }
+        }
+        stage("Run container") {
+            steps {
+                sh 'docker run -p 81:8080 webapp:dev'
             }
         }
     }
