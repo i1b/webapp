@@ -9,12 +9,17 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("Maven") {
+        stage("Unit tests") {
+            steps {
+                sh 'mvn clean test'
+            }
+        }
+        stage("Project build") {
             steps {
                 sh 'mvn clean install'
             }
         }
-        stage("Docker") {
+        stage("Image build ") {
             steps {
                 sh 'docker build .'
             }
