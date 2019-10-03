@@ -7,6 +7,6 @@ public class TestLogic {
 
     @Test
     public void getValue() {
-        Assert.assertEquals(false, Logic.getValue());
+        Assert.assertEquals(true, Logic.getValue());
     }
 }
